@@ -38,7 +38,7 @@ pub mod pallet {
         #[pallet::call_index(0)]
         #[pallet::weight(5_000_000)]
         pub fn unsafe_call(origin: OriginFor<T>) -> DispatchResult {
-            ensure_none(origin)?;
+            ensure_signed(origin)?;
 
             Ok(())
         }
